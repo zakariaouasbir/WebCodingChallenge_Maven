@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    <h:head>
+        <title>Sign In</title>
+    </h:head>
+    <h:body>
+        <center> <b:panel title="Sign in" look="success" >
+  <b:form >
+    <b:row>
+       
+         <b:column medium-screen="full">
+             <b:inputText type="email" style="width: 250px;" label="Email"  label-style="width:150px"
+                     value="#{userController.user.email}"   
+                     />
+      </b:column>
+             <b:column medium-screen="full">
+                 <b:inputText style="width: 250px;" label="Password"  label-style="width:150px"
+                     value="#{userController.user.password}"    
+                      />
+      </b:column>
+        <b:column medium-screen="full">
+            <b:commandButton look="success" value="Sing In" actionListener="#{userController.login()}" />
+      </b:column>
+        <b:column medium-screen="full">
+            <h:link outcome="/templates/signup.xhtml" value="Sing up" />
+      </b:column>   
+        <h:messages  infoStyle="color:darkgreen" errorStyle="color:darkred"/>
+       
+   
+      
+    </b:row>
+  </b:form>
+            </b:panel></center>
+    </h:body>
+</html>
+

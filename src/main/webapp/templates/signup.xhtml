@@ -1,0 +1,64 @@
+        <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+        <html xmlns="http://www.w3.org/1999/xhtml"
+              xmlns:h="http://java.sun.com/jsf/html"
+              xmlns:f="http://java.sun.com/jsf/core"
+              xmlns:ui="http://java.sun.com/jsf/facelets"
+              xmlns:p="http://primefaces.org/ui" xmlns:b="http://bootsfaces.net/ui">
+
+            <f:view contentType="text/html">
+                <h:head>
+                    <f:facet name="first">
+                        <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                        <title>Sign Up</title>
+                    </f:facet>
+                </h:head>
+
+                <h:body>
+
+                    <center> <b:panel title="Sign Up" look="success">
+          <b:form >
+               <h:messages  infoStyle="color:darkgreen" errorStyle="color:darkred"/>
+       
+            <b:row>
+              <b:column medium-screen="full">
+                <b:inputText style="width: 250px;" label="First Name"  label-style="width:150px"
+                             value="#{userController.added.firstname}"  
+                               required="true"/>
+              </b:column>
+                 <b:column medium-screen="full">
+                <b:inputText style="width: 250px;" label="Last Name"  label-style="width:150px"
+                             value="#{userController.added.lastname}"  
+                             required="true"/>
+              </b:column>
+                 <b:column medium-screen="full">
+                <b:inputText style="width: 250px;" label="Email"  label-style="width:150px"
+                             value="#{userController.added.email}"  
+                               required="true"/>
+              </b:column>
+                     <b:column medium-screen="full">
+                <b:inputText style="width: 250px;" label="Password"  label-style="width:150px"
+                             value="#{userController.added.password}"  
+                               required="true"/>
+              </b:column>
+                <b:column medium-screen="full">
+                    <b:commandButton look="success" actionListener="#{userController.signup()}" value="Sing Up"/>
+              </b:column>
+                <b:column medium-screen="full">
+                    <h:link outcome="/templates/signin.xhtml" value="Sing in" />
+              </b:column> 
+                
+
+
+
+
+
+            </b:row>
+          </b:form>
+        </b:panel>
+                    </center>
+
+                </h:body>
+
+            </f:view>
+        </html>
+
