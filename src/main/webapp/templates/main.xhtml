@@ -1,58 +1,12 @@
-    <?xml version='1.0' encoding='UTF-8' ?>
-    <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-    <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:h="http://xmlns.jcp.org/jsf/html"
-    xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-    xmlns:p="http://primefaces.org/ui"
-    xmlns:b="http://bootsfaces.net/ui"
-    xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
-    xmlns:f="http://xmlns.jcp.org/jsf/core">
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-    <title>Shops</title>
-
+        <title>Facelet Title</title>
     </h:head>
-    <h:body  >
-
-
-
-            <b:panel title="Main" look="success" > 
-                <b:commandLink value="Nearby Shops"   style="float:right;"  href="main.xhtml"/>
-                <b:commandLink value="Prefered shops "  href="Likedshops.xhtml"/>
-
-    <center>
-        <table>
-      <tr>
-        <ui:repeat var="shop" value="#{shopController.shops}" varStatus="status">
-          <f:verbatim rendered="#{status.index mod 4 == 0}">
-            &lt;/tr&gt;&lt;tr&gt;
-          </f:verbatim>
-          <td>
-    <b:form    >
-
-    <b:well value="#{shop.name}" >
-    <p:panelGrid columns="3" id="hide"  >
-
-    <f:facet name="header" >
-
-    <b:image value="#{shop.logo}"  style="width:250px ;height:200px;"/>
-    </f:facet>
-    <b:commandLink value="dislike"   icon="thumbs-down" actionListener="#{shopController.dislike(shop)}" style="color: #{shop.disliked ==false  ? 'black': 'red'}"/> 
-
-     <b:commandLink value="Like" icon="heart" actionListener="#{shopController.like(shop)}" style="color: #{shop.liked ==true  ? 'green': 'black'}"   />
-
-    </p:panelGrid>
-    </b:well>
-        </b:form>
-    </td>
-        </ui:repeat>
-      </tr>
-    </table>
-    </center>
-                <b:form>
-                <b:commandLink value="Log out" actionListener="#{userController.logout()}" style="float:right;" />
-                </b:form>
-            </b:panel>
-
+    <h:body>
+        Hello from Facelets
     </h:body>
-    </html>
+</html>
 
